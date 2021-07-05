@@ -8,11 +8,8 @@
 import UIKit
 
 class MainViewController: UITableViewController {
-    
-  
 
     let places = Place.getPlaces()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +17,10 @@ class MainViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return places.count
     }
 
-  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
             
@@ -46,7 +40,9 @@ class MainViewController: UITableViewController {
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //test
+    }
     
     
     
@@ -65,5 +61,8 @@ class MainViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {
+        
+    }
 }
