@@ -41,7 +41,16 @@ class MainViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //test
+        
+        let place = places[indexPath.row]
+
+        let vc = PlaceDetailsViewController()
+        _ = vc.view
+        
+        vc.place = place
+        vc.titleLabel.text = place.name
+
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
